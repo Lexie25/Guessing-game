@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div th:each="erro : ${message}">
+                <p style="color:blueviolet" th:text="${erro}"></p>
+            </div>
+            <form method="POST">
+                    <p>Name: <input type="text" name="nome"></p>
+                    <p>Which number will kick in?<input type="number" value="0" name="kick"></p>
+                    <h6> Kick a number between 1 and 4</h6>
+                    <button type="submit">Kick</button>
+                </form>
+                <hr>
+                <h1>winner</h1>
+                <div th:each="winner : ${winner}">
+                    <h3 th:text="${winner.name}"></h3>
+                </div>
+    </head>
+    <body>
